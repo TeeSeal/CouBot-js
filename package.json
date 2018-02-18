@@ -1,0 +1,23 @@
+{
+  "name": "coubot",
+  "version": "0.0.1",
+  "description": "A Discord Coub bot.",
+  "main": "src/index.js",
+  "repository": "https://github.com/TeeSeal/CouBot.git",
+  "author": "TeeSeal <teesealz@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node -r dotenv/config src/index.js",
+    "lint": "npx eslint ."
+  },
+  "dependencies": {
+    "coub-dl": "^1.1.7",
+    "discord.js": "hydrabolt/discord.js",
+    "logr": "teeseal/logr"
+  },
+  "devDependencies": {
+    "dotenv": "^5.0.0",
+    "eslint": "^4.18.0"
+  }
+}
