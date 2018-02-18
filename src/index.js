@@ -10,13 +10,7 @@ async function fetchCoub(text) {
   const url = text.match(coubRegexp)[0]
   const coub = await Coub.fetch(url)
   const filePath = path.join(__dirname, '../.temp.mp4')
-
-  return new Promise(resolve => {
-    coub
-      .attachAudio()
-      .save(filePath)
-      .once('end', () => resolve(filePath))
-  })
+  return coub.attachAudio().write(filePath)
 }
 // ---- COUB ----
 
