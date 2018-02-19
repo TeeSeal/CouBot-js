@@ -32,7 +32,10 @@ const client = new Client()
 const prefix = 'c.'
 
 client
-  .on('ready', () => logr.success(`Up and running as ${client.user.tag}!`))
+  .on('ready', () => {
+    logr.success(`Up and running as ${client.user.tag}!`)
+    client.user.setActivity('out for coub links.', { type: 'WATCHING' })
+  })
   .on('message', async msg => {
     // --- Coub catching ---
     if (coubRegexp.test(msg.content) && !msg.content.startsWith(prefix)) {
