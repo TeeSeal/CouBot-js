@@ -6,10 +6,17 @@ const path = require('path')
 // ---- COUB ----
 const coubRegexp = /(https?:\/\/)?(www\.)?coub\.com\/[\w/]+/
 
-async function fetchCoub(text) {
+async function fetchCoub(text, format = 'mp4') {
   const url = text.match(coubRegexp)[0]
   const coub = await Coub.fetch(url)
   const filePath = path.join(__dirname, '../.coub.mp4')
+
+  if (format === 'gif') {
+    return coub
+      .scale(500)
+      .write('.coub.gif')
+  }
+
   return coub
     .attachAudio()
     .loop(2)
@@ -29,7 +36,7 @@ client
   .on('message', async msg => {
     // --- Coub catching ---
     if (coubRegexp.test(msg.content) && !msg.content.startsWith(prefix)) {
-      const coub = await fetchCoub(msg.content)
+      const coub = await fetchCoub(msg.content, msg.content.includes('gif') ? 'gif' : 'mp4')
       return msg.channel.send({ files: [coub] })
     }
 
