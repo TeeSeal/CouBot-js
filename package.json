@@ -12,7 +12,7 @@
     "lint": "npx eslint ."
   },
   "dependencies": {
-    "coub-dl": "^1.2.0",
+    "coub-dl": "^1.3.1",
     "discord.js": "hydrabolt/discord.js",
     "logr": "teeseal/logr"
   },
