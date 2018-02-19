@@ -19,7 +19,7 @@ async function fetchCoub(text, format = 'mp4') {
 
   return coub
     .attachAudio()
-    .loop(2)
+    .loop(Math.floor(20 / coub.duration))
     .addOption('-c', 'copy')
     .addOption('-shortest')
     .write(filePath)
