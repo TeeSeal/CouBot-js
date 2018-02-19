@@ -9,10 +9,12 @@ const coubRegexp = /(https?:\/\/)?(www\.)?coub\.com\/[\w/]+/
 async function fetchCoub(text) {
   const url = text.match(coubRegexp)[0]
   const coub = await Coub.fetch(url)
-  const filePath = path.join(__dirname, '../.temp.mp4')
+  const filePath = path.join(__dirname, '../.coub.mp4')
   return coub
-    .loop(2)
     .attachAudio()
+    .loop(2)
+    .addOption('-c', 'copy')
+    .addOption('-shortest')
     .write(filePath)
 }
 // ---- COUB ----
