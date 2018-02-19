@@ -1,6 +1,6 @@
 {
   "name": "coubot",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A Discord Coub bot.",
   "main": "src/index.js",
   "repository": "https://github.com/TeeSeal/CouBot.git",
