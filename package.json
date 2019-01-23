@@ -17,7 +17,7 @@
     "logr": "teeseal/logr"
   },
   "devDependencies": {
-    "dotenv": "^6.0.0",
-    "eslint": "^5.3.0"
+    "dotenv": "^6.2.0",
+    "eslint": "^5.12.1"
   }
 }
